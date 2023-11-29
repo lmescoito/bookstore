@@ -1,7 +1,6 @@
 import factory
 
 from django.contrib.auth.models import User
-from product.tests.factory import ProductFactory
 
 from order.models import Order
 
@@ -13,16 +12,16 @@ class UserFactory(factory.django.DajngoModelFactory):
         model = User
 
 
-class OrderFactory(factory.django.DajngoModelFactory):
+class OrderFactory(factory.django.DjangoModelFactory):
     user = factory.SubFactory(UserFactory)
-
+    
     @factory.post_generation
-    def produtc(self, create, extrated, **kwargs):
+    def produtc(self, create, extracted, **kwargs):
         if not create:
             return
         
-        if extrated:
-            for produtc in extrated:
+        if extracted:
+            for produtc in extracted:
                 self.produtc.add(produtc)
     
     class Meta:
