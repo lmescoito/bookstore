@@ -1,2 +1,2 @@
 
-from .factory import CategoryFactory, ProductFactory
+from ..factories import CategoryFactory, ProductFactory

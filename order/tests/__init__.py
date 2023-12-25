@@ -1,2 +1,2 @@
 
-from .factory import UserFactory, OrderFactory
+from ..factories import UserFactory, OrderFactory

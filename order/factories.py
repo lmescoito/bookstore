@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 from order.models import Order
 
-class UserFactory(factory.django.DajngoModelFactory):
+class UserFactory(factory.django.DjangoModelFactory):
     email = factory.Faker('pystr')
     username = factory.Faker('pystr')
 
