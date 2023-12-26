@@ -9,7 +9,7 @@ from product.factories import CategoryFactory, ProductFactory
 from order.factories import UserFactory
 from product.models import Product, category
 
-class TestOrderViewSet(APITestCase):
+class TestProductViewSet(APITestCase):
 
     client = APIClient()
 
@@ -31,7 +31,7 @@ class TestOrderViewSet(APITestCase):
     def test_create_product(self):
         user = CategoryFactory()
         data = json.dumps({
-            'tittle': 'notebook',
+            'title': 'notebook',
             'price': 800.00,
             'categories_id': [ category.id ]
         })
