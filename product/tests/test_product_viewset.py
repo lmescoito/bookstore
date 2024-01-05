@@ -37,7 +37,7 @@ class TestProductViewSet(APITestCase):
         })
 
         response = self.client.post(
-            reverse('order-list', kwargs={'version': 'v1'}),
+            reverse('product-list', kwargs={'version': 'v1'}),
             data=data,
             content_type='application/json'
         )
