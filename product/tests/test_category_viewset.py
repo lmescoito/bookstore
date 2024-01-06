@@ -6,7 +6,7 @@ from rest_framework.test import APITestCase, APIClient
 from django.urls import reverse
 
 from product.factories import CategoryFactory
-from product.models import  category
+from product.models import Category
 
 class CategoryViewSet(APITestCase):
 
@@ -16,9 +16,7 @@ class CategoryViewSet(APITestCase):
         self.category = CategoryFactory(title='books')
     
     def test_get_all_category(self):
-        response = self.client.get(
-            reverse('category-list', kwargs={'version': 'v1'})
-        )
+        response = self.client.get(reverse('category-list', kwargs={'version': 'v1'}))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         category_data = json.loads(response.content)
 
@@ -38,6 +36,6 @@ class CategoryViewSet(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
-        created_category = category.objects.get(title='technology')
+        created_category = Category.objects.get(title='technology')
 
         self.assertEqual(created_category.title, 'technology')

@@ -29,7 +29,7 @@ class TestProductViewSet(APITestCase):
         self.assertEqual(product_data[0]['active'], self.product.active)
     
     def test_create_product(self):
-        user = CategoryFactory()
+        category = CategoryFactory()
         data = json.dumps({
             'title': 'notebook',
             'price': 800.00,
