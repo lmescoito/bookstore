@@ -4,4 +4,4 @@ from rest_framework.viewsets import ModelViewSet
 
 class OrderViewSets(ModelViewSet):
     serializer_class = OrderSerializer
-    queryset = Order.objects.all()
+    queryset = Order.objects.all().order_by('id')
