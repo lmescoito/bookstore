@@ -34,10 +34,10 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "rest_framework",
     "django.contrib.staticfiles",
     'rest_framework.authtoken',
     "debug_toolbar",
-    "rest_framework",
     "order",
     "product",
 ]
@@ -136,7 +136,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ]
 }
 
@@ -148,5 +148,5 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS =  ["*"]
 
